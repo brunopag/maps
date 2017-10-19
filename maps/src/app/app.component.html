@@ -14,10 +14,12 @@
                 [longitude]="lng"
                 [zoom]="zoom"
                 (mapClick)="clickMapa( $event )">
-        <agm-marker [markerDraggable]="marcador.draggable"
+        <agm-marker *ngFor="let marcador of _mapsService.marcadores; let i = index"
+                    [markerDraggable]="marcador.draggable"
                     [latitude]="marcador.lat"
                     [longitude]="marcador.lng"
-                    *ngFor="let marcador of _mapsService.marcadores">
+                    (markerClick) = "clickMarcador(marcador, i)"
+                    (dragEnd)="dragEndMarcador(marcador, $event)">
           <agm-snazzy-info-window
                 [maxWidth]="200"
                 [closeWhenOthersOpen]="true">

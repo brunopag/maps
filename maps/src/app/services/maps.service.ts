@@ -19,6 +19,19 @@ export class MapsService {
 
    agregarMarcador(marcador:Marcador){
      this.marcadores.push(marcador);
+     this.guardarMarcadores();
+   }
+
+   guardarMarcadores(){
+     localStorage.setItem('marcadores', JSON.stringify(this.marcadores));
+   }
+
+   cargarMarcadores(){
+     if (localStorage.getItem('marcadores')){
+       this.marcadores = JSON.parse(localStorage.getItem('marcadores'));
+     } else {
+       this.marcadores = [];
+     }
    }
 
 }
