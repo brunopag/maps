@@ -4,3 +4,7 @@
 agm-map {
   height: 600px;
 }
+
+.main-container {
+  margin-top: 30px;
+}

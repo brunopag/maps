@@ -1,7 +1,29 @@
 <app-navbar></app-navbar>
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> -->
-</agm-map>
+<div class="container main-container">
+
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Marcador</h5>
+    </div>
+
+    <div class="col-md-8">
+      <!-- this creates a google map on the page with the given lat/lng from -->
+      <!-- the component as the initial center of the map: -->
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker [latitude]="lat" [longitude]="lng">
+          <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+            <ng-template>
+              <strong>Titulo</strong>
+              <hr>
+              <p>Descripcion del marcador</p>
+            </ng-template>
+          </agm-snazzy-info-window>
+        </agm-marker>
+      </agm-map>
+
+    </div>
+  </div>
+
+
+</div>

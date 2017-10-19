@@ -7,6 +7,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 // Angular Google Maps (angular-maps.com)
 import { AgmCoreModule } from '@agm/core';
 
+// Imports para Info Windows de los marcadores
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+
+// Servicio de mapas
+import {MapsService} from './services/maps.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +23,10 @@ import { AgmCoreModule } from '@agm/core';
     // Configurar Angular Google Maps con la API Key
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDJarEWaHb_dF2OsBwfGY7Jyh3sDuwRX6c'
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
-  providers: [],
+  providers: [MapsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
