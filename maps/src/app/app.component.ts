@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  // Variables que controlan latitud, longitud y zoom, las cuales se toman desde la vista html usando []
+  lat: number = -32.9443021;
+  lng: number = -60.6728199;
+  zoom: number = 16;
+
 }

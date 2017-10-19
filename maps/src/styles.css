@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Estilo obligatorio para Angular Google Maps 2 */
+agm-map {
+  height: 600px;
+}
