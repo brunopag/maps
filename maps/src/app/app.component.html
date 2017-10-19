@@ -10,13 +10,20 @@
     <div class="col-md-8">
       <!-- this creates a google map on the page with the given lat/lng from -->
       <!-- the component as the initial center of the map: -->
-      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-        <agm-marker [latitude]="lat" [longitude]="lng">
-          <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <agm-map  [latitude]="lat"
+                [longitude]="lng"
+                [zoom]="zoom"
+                (mapClick)="clickMapa( $event )">
+        <agm-marker [markerDraggable]="marcador.draggable"
+                    [latitude]="marcador.lat"
+                    [longitude]="marcador.lng"
+                    *ngFor="let marcador of _mapsService.marcadores">
+          <agm-snazzy-info-window
+                [maxWidth]="200"
+                [closeWhenOthersOpen]="true">
             <ng-template>
-              <strong>Titulo</strong>
-              <hr>
-              <p>Descripcion del marcador</p>
+              <strong>{{ marcador.titulo }}</strong>
+              <p *ngIf="marcador.desc">{{ marcador.desc }}</p>
             </ng-template>
           </agm-snazzy-info-window>
         </agm-marker>
