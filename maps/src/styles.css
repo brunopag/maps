@@ -8,3 +8,7 @@ agm-map {
 .main-container {
   margin-top: 30px;
 }
+
+.puntero{
+  cursor: pointer;
+}

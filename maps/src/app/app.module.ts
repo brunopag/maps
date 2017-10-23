@@ -13,6 +13,10 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 // Servicio de mapas
 import {MapsService} from './services/maps.service';
 
+// Modulo para el trabajo con formularios
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,8 @@ import {MapsService} from './services/maps.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDJarEWaHb_dF2OsBwfGY7Jyh3sDuwRX6c'
     }),
-    AgmSnazzyInfoWindowModule
+    AgmSnazzyInfoWindowModule,
+    FormsModule
   ],
   providers: [MapsService],
   bootstrap: [AppComponent]
