@@ -9,6 +9,7 @@
 
         <div class="form-group">
           <label>Titulo</label>
+          <!-- El ngModel indica que variable va a estar haciendo referencia el campo -->
           <input [(ngModel)]="marcadorSel.titulo"
                   type="text"
                   name="titulo"
@@ -17,6 +18,7 @@
 
         <div class="form-group">
           <label>Descripcion</label>
+          <!-- Los textareas tienen cierre de tag!! -->
           <textarea [(ngModel)]="marcadorSel.desc"
                   type="text"
                   name="desc"
@@ -27,6 +29,8 @@
 
         <div class="form-group">
           <label>Draggable</label>
+          <!-- Los select tienen cierre de tag!! El evento change se dispara cuando cambia la opcion del select -->
+          <!-- Se hace asi para modificar una variable booleana (draggable), a partir de los string que usa el option -->
           <select [(ngModel)]="draggable"
                   name="draggable"
                   class="form-control"
@@ -36,6 +40,8 @@
                 </select>
         </div>
 
+        <!-- La vista directamente ejecuta el metodo del servicio para guardar el arreglo de marcadores en el localStorage
+        no se si es la mejor manera... -->
         <button (click)="_mapsService.guardarMarcadores()"
                   type="button" class="btn btn-outline-primary btn-block">
           Guardar Cambios
